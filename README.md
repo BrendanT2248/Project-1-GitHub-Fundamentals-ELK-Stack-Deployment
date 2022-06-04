@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 [Project 1 Network Diagram](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/Project%201%20Network%20Diagram.drawio.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Project 1 Network Diagram file may be used to install only certain pieces of it, such as Filebeat.
 
   - [Filebeat Playbook YAML File](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Ansible/Filebeat%20Playbook.yml.txt)
   - [Filebeat Configuration YAML File](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Ansible/Filebeat%20Configuration.yml.txt)
@@ -24,12 +24,20 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly functional, in addition to restricting high-traffic to the network.
+- What aspect of security do load balancers protect?
+  - Load balancers help prevent servers from overloading with traffic as well as optimising productivity, which will in-turn ensure the maximum uptime for the servers the load balancer is serving.
+  - This also adds a level of security by rerouting traffic from one server to another. This thereby causes it to eliminate single points of failure, since all servers should be working at a similar level and directing similar levels of traffic. This can help prevent an attack such as  DDoS attack, since traffic needs to go through the load balancer, it will balance out that traffic regardless. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- What is the advantage of a jump box?
+  - A jump box is a system on a network used to access and manage devices in a seperate security zone. A jump box or server is a hardened and moniterewd device that spwans different security zones and provides a controlled means of access between them. 
+  - The main advantage of a jump box is the fact that when you need to roll updates out to multiple machines, if a jump box is used, you only need to roll out updates through the jump box itself. Any tools in place for the SAN (Storage Area Network) are on the jump box, making it much easier to roll out security updates. 
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the network and system logs.
+- What does Filebeat watch for?
+  - 
+- What does Metricbeat record?
+  - 
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
