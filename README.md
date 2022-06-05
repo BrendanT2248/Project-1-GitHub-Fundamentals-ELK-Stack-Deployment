@@ -113,13 +113,23 @@ SSH into the control node and follow the steps below:
 - Copy the filebeat-configuration.yml file to /etc/ansible/roles.
 - Update the configuration file to include the webservers (Web-1 and Web-2) and ELK-VM (Project-1-VM-BT) private IP addresses.
 - Run the filebeat playbook, located in /etc/ansible/files, and navigate to ELK-VM (Project-1-VM-BT) to check that the installation worked as expected. Can navigate to it's public IP address in a browser - 
-http://52.243.75.219/
+http://52.243.75.219:5601/
+
+By navigating to the ELK-VM's public IP in a browser, we are able to see the GUI of Kibana - 
+
+![Kibana Status]
+
+We can then confirm the status of Filebeat. If the configuration file and playbook were ran successfully, we should see this - 
+
+![Filbeat Status](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/filebeat%20status.PNG) 
 
 #### Metricbeat
 - Copy the metricbeat-configuration.yml file to /etc/ansible/roles.
 - Update the configuration file to include the webservers (Web-1 and Web-2) and ELK-VM (Project-1-VM-BT) private IP addresses.
 - Run the metricbeat playbook, located in /etc/ansible/files and navigate to ELK-VM (Project-1-VM-BT) to check that the installation worked as expected. Can navigate to it's public IP address in a browser - 
-http://52.243.75.219/
+http://52.243.75.219:5601/
+
+![Metricbeat Status](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/metricbeat%20status.PNG)
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
