@@ -36,7 +36,7 @@ Load balancing ensures that the application will be highly functional, in additi
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the network and system logs.
 
 ### What does Filebeat watch for?
-  - Filebeat is a lgihtweight shipper for forwarding and centralising log data. It monitors the log files that you specify and forwards them through to Elasticsearch/Logstash for categorisation. 
+  - Filebeat is a lgihtweight shipper for forwarding and centralising log data. It monitors the log files that you specify and forwards them through to Elasticsearch/Logstash for indexing. 
 ### What does Metricbeat record?
   - Metricbeat takes the metrics and statistics from programs you specify. It then collects and ships them to the output that you specifiy, such as Elasticsearch and Logstash. 
 
@@ -66,7 +66,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name                 | Publicly Accessible | Allowed IP Addresses |
 |----------------------|---------------------|----------------------|
-| Jump Box             | Yes                 | 115.128.3.32         |
+| Jump Box             | No                  | 115.128.3.32         |
 | Project-1-VM (ELK-VM)| No                  | 10.0.0.4             |
 | Web-1-VM             | No                  | 10.0.0.4             |
 | Web-2-VM             | No                  | 10.0.0.4             |
@@ -74,12 +74,16 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- What is the main advantage of automating configuration with Ansible?
+  - This allows you to deploy to multiple servers using a single playbook. This is because the playbook contains several commands in order which will complete the entire rollout, from downloading, installing and configuring certain services. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install docker.io
+- Install python3-pip
+- Install docker container
+- Increases virtual memory
+- Increases maximum VM map count to 262144
+- Launches the docker container - ELK
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
