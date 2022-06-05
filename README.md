@@ -34,38 +34,42 @@ Load balancing ensures that the application will be highly functional, in additi
   - The main advantage of a jump box is the fact that when you need to roll updates out to multiple machines, if a jump box is used, you only need to roll out updates through the jump box itself. Any tools in place for the SAN (Storage Area Network) are on the jump box, making it much easier to roll out security updates. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the network and system logs.
-- What does Filebeat watch for?
-  - 
-- What does Metricbeat record?
-  - 
+
+### What does Filebeat watch for?
+  - Filebeat is a lgihtweight shipper for forwarding and centralising log data. It monitors the log files that you specify and forwards them through to Elasticsearch/Logstash for categorisation. 
+### What does Metricbeat record?
+  - Metricbeat takes the metrics and statistics from programs you specify. It then collects and ships them to the output that you specifiy, such as Elasticsearch and Logstash. 
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name                 | Function | IP Address                                       | Operating System     |
+|----------------------|----------|--------------------------------------------------|----------------------|
+| Jump-Box-Provisioner | Gateway  | 10.0.0.4 (private) // 20.248.193.199 (public)    |     Linux            |
+| Project-1-VM (ELK-VM)| Server   | 10.1.0.4 (private) // 52.243.75.219 (public)     |     Linux            |
+| Web-1-VM             | Server   | 10.0.0.5 (private)                               |     Linux            |
+| Web-2-VM             | Server   | 10.0.0.6 (private)                               |     Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 115.128.3.32 (local PC IP address)
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Jump-Box-Provisioner.
+
+Which machine did you allow to access your ELK VM? What was its IP address?
+- The Jump-Box-Provisioner machine. It's private IP address is 10.0.0.4. Machines within the network can only be accessed via this machine. 
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name                 | Publicly Accessible | Allowed IP Addresses |
+|----------------------|---------------------|----------------------|
+| Jump Box             | Yes                 | 115.128.3.32         |
+| Project-1-VM (ELK-VM)| No                  | 10.0.0.4             |
+| Web-1-VM             | No                  | 10.0.0.4             |
+| Web-2-VM             | No                  | 10.0.0.4             |
 
 ### Elk Configuration
 
