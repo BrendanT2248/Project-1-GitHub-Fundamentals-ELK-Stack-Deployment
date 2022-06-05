@@ -88,22 +88,35 @@ The playbook implements the following tasks:
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![docker ps command](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/docker%20ps%20status%20on%20elk%20machine%202.PNG)
+
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1-VM (10.0.0.5)
+- Web-2-VM (10.0.0.6)
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat:
+  - Filebeat collects log data from specific files on machines. Examples of log data that Filebeat can collect are audit logs, deprecation logs, gc logs, server logs and slow logs. 
+- Metricbeat:
+  - Metricbeat helps monitor servers and other specified machines by collecting metrics from the system and services running on the server. It can collect logs from services such as Apache, HAProxy and System logs, 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+
+#### Filebeat
+- Copy the filebeat-configuration.yml file to /etc/ansible/roles.
+- Update the hosts file to include 
+- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+
+#### Metricbeat
+- Copy the metricbeat-configuration.yml file to /etc/ansible/roles.
+- Update the hosts file to include 
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
