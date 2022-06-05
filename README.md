@@ -43,12 +43,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name                 | Function | IP Address                                       | Operating System     |
-|----------------------|----------|--------------------------------------------------|----------------------|
-| Jump-Box-Provisioner | Gateway  | 10.0.0.4 (private) // 20.248.193.199 (public)    |     Linux            |
-| Project-1-VM (ELK-VM)| Server   | 10.1.0.4 (private) // 52.243.75.219 (public)     |     Linux            |
-| Web-1-VM             | Server   | 10.0.0.5 (private)                               |     Linux            |
-| Web-2-VM             | Server   | 10.0.0.6 (private)                               |     Linux            |
+| Name                    | Function | IP Address                                       | Operating System     |
+|-------------------------|----------|--------------------------------------------------|----------------------|
+| Jump-Box-Provisioner    | Gateway  | 10.0.0.4 (private) // 20.248.193.199 (public)    |     Linux            |
+| Project-1-VM-BT (ELK-VM)| Server   | 10.1.0.4 (private) // 52.243.75.219 (public)     |     Linux            |
+| Web-1                   | Server   | 10.0.0.5 (private)                               |     Linux            |
+| Web-2                   | Server   | 10.0.0.6 (private)                               |     Linux            |
 
 ### Access Policies
 
@@ -64,12 +64,12 @@ Which machine did you allow to access your ELK VM? What was its IP address?
 
 A summary of the access policies in place can be found in the table below.
 
-| Name                 | Publicly Accessible | Allowed IP Addresses |
-|----------------------|---------------------|----------------------|
-| Jump Box             | No                  | 115.128.3.32         |
-| Project-1-VM (ELK-VM)| No                  | 10.0.0.4             |
-| Web-1-VM             | No                  | 10.0.0.4             |
-| Web-2-VM             | No                  | 10.0.0.4             |
+| Name                 | Publicly Accessible    | Allowed IP Addresses |
+|----------------------|------------------------|----------------------|
+| Jump Box             | No                     | 115.128.3.32         |
+| Project-1-VM-BT (ELK-VM)| No                  | 10.0.0.4             |
+| Web-1                | No                  | 10.0.0.4             |
+| Web-2                | No                  | 10.0.0.4             |
 
 ### Elk Configuration
 
@@ -91,8 +91,8 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- Web-1-VM (10.0.0.5)
-- Web-2-VM (10.0.0.6)
+- Web-1 (10.0.0.5)
+- Web-2 (10.0.0.6)
 
 We have installed the following Beats on these machines:
 - Filebeat
@@ -111,13 +111,15 @@ SSH into the control node and follow the steps below:
 
 #### Filebeat
 - Copy the filebeat-configuration.yml file to /etc/ansible/roles.
-- Update the hosts file to include 
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Update the configuration file to include the webservers (Web-1 and Web-2) and ELK-VM (Project-1-VM-BT) private IP addresses.
+- Run the filebeat playbook, located in /etc/ansible/files, and navigate to ELK-VM (Project-1-VM-BT) to check that the installation worked as expected. Can navigate to it's public IP address in a browser - 
+http://52.243.75.219/
 
 #### Metricbeat
 - Copy the metricbeat-configuration.yml file to /etc/ansible/roles.
-- Update the hosts file to include 
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Update the configuration file to include the webservers (Web-1 and Web-2) and ELK-VM (Project-1-VM-BT) private IP addresses.
+- Run the metricbeat playbook, located in /etc/ansible/files and navigate to ELK-VM (Project-1-VM-BT) to check that the installation worked as expected. Can navigate to it's public IP address in a browser - 
+http://52.243.75.219/
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
