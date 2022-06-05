@@ -117,7 +117,7 @@ http://52.243.75.219:5601/
 
 By navigating to the ELK-VM's public IP in a browser, we are able to see the GUI of Kibana - 
 
-![Kibana Status]
+![Kibana Status](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/kibana%20status.PNG)
 
 We can then confirm the status of Filebeat. If the configuration file and playbook were ran successfully, we should see this - 
 
@@ -131,9 +131,33 @@ http://52.243.75.219:5601/
 
 ![Metricbeat Status](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/metricbeat%20status.PNG)
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+### Answer the following questions to fill in the blanks:
+- Which file is the playbook?
+  - The playbook file is filebeat-playbook.yml
+- Where do you copy it?
+  -  It should be copied to /etc/ansible/roles
+- Which file do you update to make Ansible run the playbook on a specific machine?
+  - /etc/ansible/hosts file. Update this file on the container from the Jump-Box-Provisioner to include the webservers of the machines we want to collect logs from as well as the ELK-VM's private IP's. 
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+  - On the /etc/ansible/hosts file, we specify the IP's of the webservers and specify the IP of the ELK server in different zones. This allows us to target the webservers to install Filebeat on. 
+- Which URL do you navigate to in order to check that the ELK server is running?
+  - The ELK server's public IP address. http://52.243.75.219:5601/
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+#### As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+
+- Copy the filebeat-configuration.yml to the /etc/ansible/files directory on the container on the machine configured to be a Jump Box.
+- Update the configuration file to include the private IP of the ELK server to the Elasticsearch and Kibana sections of the file as well as any web servers you want to collect filebeat logs from. 
+- Create a new playbook by running nano filebeat-playbook.yml in the /etc/ansible/roles directory. This playbook will download and install filebeat, update the configuration file, enable and configure the system module, run and start the filebeat service. See below:
+
+!()
+
+- Do the above steps for metric beat:
+  - Copy the metricbeat-configuration.yml file to the /etc/ansible/files directory
+  - Update the configuration file to include the private IP of the ELK server and the web servers.  
+  - Create a new playbook by running nano metricbeat-playbook.yml in the /etc/ansible/roles directory. This playbook will be similar to the filebeat playbook. See below:
+
+!()
+
+- Run the playbooks.
+- Navigate to the GUI of the ELK server by navigating to it in a browser
+- Check to verify data is incoming from both filebeat and metricbeat services from the web servers
