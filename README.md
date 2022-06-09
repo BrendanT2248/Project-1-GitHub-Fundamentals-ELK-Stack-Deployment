@@ -121,7 +121,7 @@ By navigating to the ELK-VM's public IP in a browser, we are able to see the GUI
 
 We can then confirm the status of Filebeat. If the configuration file and playbook were ran successfully, we should see this - 
 
-![Filbeat Status](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/filebeat%20status.PNG) 
+[Filbeat Status](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/filebeat%20status.PNG) 
 
 #### Metricbeat
 - Copy the metricbeat-configuration.yml file to /etc/ansible/roles.
@@ -129,7 +129,7 @@ We can then confirm the status of Filebeat. If the configuration file and playbo
 - Run the metricbeat playbook, located in /etc/ansible/files and navigate to ELK-VM (Project-1-VM-BT) to check that the installation worked as expected. Can navigate to it's public IP address in a browser - 
 http://52.243.75.219:5601/
 
-![Metricbeat Status](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/metricbeat%20status.PNG)
+[Metricbeat Status](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Images/metricbeat%20status.PNG)
 
 ### Answer the following questions to fill in the blanks:
 - Which file is the playbook?
