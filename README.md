@@ -149,14 +149,14 @@ http://52.243.75.219:5601/
 - Update the configuration file to include the private IP of the ELK server to the Elasticsearch and Kibana sections of the file as well as any web servers you want to collect filebeat logs from. 
 - Create a new playbook by running nano filebeat-playbook.yml in the /etc/ansible/roles directory. This playbook will download and install filebeat, update the configuration file, enable and configure the system module, run and start the filebeat service. See below:
 
-![Filebeat Playbook](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Ansible/Filebeat%20Playbook.yml.txt)
+[Filebeat Playbook](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Ansible/Filebeat%20Playbook.yml.txt)
 
 - Do the above steps for metric beat:
   - Copy the metricbeat-configuration.yml file to the /etc/ansible/files directory
   - Update the configuration file to include the private IP of the ELK server and the web servers.  
   - Create a new playbook by running nano metricbeat-playbook.yml in the /etc/ansible/roles directory. This playbook will be similar to the filebeat playbook. See below:
 
-![Metricbeat Playbook](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Ansible/Metricbeat%20Playbook.yml.txt)
+[Metricbeat Playbook](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Ansible/Metricbeat%20Playbook.yml.txt)
 
 - Run the playbooks.
 - Navigate to the GUI of the ELK server by navigating to it in a browser
