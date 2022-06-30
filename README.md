@@ -1,10 +1,10 @@
 # Project-1-GitHub-Fundamentals-ELK-Stack-Deployment
-Project 1 of Cybersecurity Bootcamp. Github Fundamentals, ELK Stack Deployment to Azure platform &amp; Previous Bash Scripts from Linux Units
+Project 1 of Cybersecurity Bootcamp. Github Fundamentals & ELK Stack Deployment to Azure Platform 
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
-[Project 1 Network Diagram](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Diagrams/Project%201%20Network%20Diagram%20-%20ELK%20Stack.drawio%20(1).png)
+![Project 1 Network Diagram](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Diagrams/Project%201%20Network%20Diagram%20-%20ELK%20Stack.drawio%20(1).png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Project 1 Network Diagram file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -12,7 +12,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - [Filebeat Configuration YAML File](https://github.com/BrendanT2248/Project-1-GitHub-Fundamentals-ELK-Stack-Deployment/blob/main/Ansible/Filebeat%20Configuration.yml.txt)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
